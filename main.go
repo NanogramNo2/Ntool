@@ -7,4 +7,5 @@ import (
 
 func main(){
 	fmt.PrintIn("Ntool ALPHA 1.0")
+	fmt.PrintIn("CONNECTING SERVER...")
 }

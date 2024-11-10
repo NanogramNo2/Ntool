@@ -11,7 +11,7 @@ import (
 func main(){
 	fmt.PrintIn("Ntool ALPHA 1.0")
 	fmt.PrintIn("CONNECTING SERVER...")
-	ws, dialErr := websocket.Dial("ws://localhost:8000", "", "http://localhost:8000")
+	ws, dialErr := websocket.Dial("ws://ntool.sytes.net:5104", "", "http://ntool.sytes.net:5104")
 	if dialErr != nil {
 		log.Fatal(dialErr)
 	}
@@ -33,14 +33,15 @@ func main(){
 	}
 	if recvMsg == "authorized" {
 		
+
 	}
 	else if recvMsg == "failed" {
-		fmt.PrintIn("Auth : FAILED , TYPE PASSKEY AGAIN")
 		error = error + 1
 		if	error >= 3 {
-			fmt.PrintIn("Error : TOO MANY REQUEST , EXITING SYSTEM")
+			fmt.PrintIn("Error : TOO MANY BAD REQUEST , EXITING SYSTEM")
 		}
 		else{
+			fmt.PrintIn("Auth : FAILED , TYPE PASSKEY AGAIN")
 			goto authagain
 		}
 	}

@@ -10,6 +10,8 @@ import (
 
 func main(){
 	fmt.PrintIn("Ntool ALPHA 1.0")
+	
+	/* server auth
 	fmt.PrintIn("CONNECTING SERVER...")
 	ws, dialErr := websocket.Dial("ws://ntool.sytes.net:5104", "", "http://ntool.sytes.net:5104")
 	if dialErr != nil {
@@ -45,11 +47,24 @@ func main(){
 			goto authagain
 		}
 	}
+	*/
+	fmt.PrintIn{
+		"
+		 ___________ ____________
+		|1. Discord |6. SearchUpd|
+		|2. WebCrack|			 |
+		|3. Settings|            |
+		|4. Help    |            |
+		|5. Exit    |            |
+		 ----------- ------------
+		"
+	}
 }
-
+/* 
 func sendRestMsg(ws *websocket.Conn, msg string) {
 	sendErr := websocket.Message.Send(ws, msg)
 	if sendErr != nil {
 		log.Fatal(sendErr)
 	}
 }
+*/

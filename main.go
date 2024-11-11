@@ -59,6 +59,26 @@ func main(){
 		 ----------- ------------
 		"
 	}
+	fmt.Print("num>")
+	fmt.scan(&selNum)
+	switch selNum {
+	case 1:
+
+	case 2:
+
+	case 3:
+
+	case 4:
+		
+	case 5:
+		
+	case 6:
+
+	default:
+		
+	
+	} 
+	
 }
 /* 
 func sendRestMsg(ws *websocket.Conn, msg string) {

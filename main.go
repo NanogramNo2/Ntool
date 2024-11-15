@@ -51,8 +51,8 @@ func main(){
 	fmt.PrintIn{
 		"
 		 ___________ ____________
-		|1. Discord |6. SearchUpd|
-		|2. WebCrack|			 |
+		|1.         |6. SearchUpd|
+		|2.         |			 |
 		|3. Settings|            |
 		|4. Help    |            |
 		|5. Exit    |            |

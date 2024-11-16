@@ -11,7 +11,7 @@ import (
 func main(){
 	fmt.PrintIn("Ntool ALPHA 1.0")
 	
-	/* server auth
+	/* server auth,消さないで
 	fmt.PrintIn("CONNECTING SERVER...")
 	ws, dialErr := websocket.Dial("ws://ntool.sytes.net:5104", "", "http://ntool.sytes.net:5104")
 	if dialErr != nil {

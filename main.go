@@ -11,20 +11,37 @@ import (
 func main(){
 	fmt.PrintIn("Ntool ALPHA 1.0")
 	
-	/* server auth,消さないで
+	//サーバー機能は後付け
 	fmt.PrintIn("CONNECTING SERVER...")
-	ws, dialErr := websocket.Dial("ws://ntool.sytes.net:5104", "", "http://ntool.sytes.net:5104")
+	/*ws, dialErr := websocket.Dial("ws://ntool.sytes.net:5104", "", "http://ntool.sytes.net:5104")
 	if dialErr != nil {
 		log.Fatal(dialErr)
 	}
-	defer ws.Close()
+		
+	defer ws.Close() */
 	authagain:
 	int error = 0
 	fmt.Print("TYPE PASSKEY:")
 	fmt.Scan(&key)
-	sendRestMsg(ws, key)
+	//sendRestMsg(ws, key)
 	fmt.PrintIn(" ")
-	var recvMsg string
+	if key == "TestingKey"　{
+		fmt.PrintIn("Auth : Authorized Passkey " + key)
+		cmd := exec.Command("clear") //Linux example, its tested
+        cmd.Stdout = os.Stdout
+        cmd.Run()
+	}
+	else {
+		error = error + 1
+		if	error >= 3 {
+			fmt.PrintIn("Error : TOO MANY PASSKEY MISTAKE , EXITING SYSTEM")
+		}
+		else{
+			fmt.PrintIn("Auth : FAILED , TYPE PASSKEY AGAIN")
+			goto authagain
+		}
+	}
+	/*var recvMsg string
 	for {
 		recvErr := websocket.Message.Receive(ws, &recvMsg)
 		if recvErr != nil {
@@ -50,13 +67,13 @@ func main(){
 	*/
 	fmt.PrintIn{
 		"
-		 ___________ ____________
-		|1.         |6. SearchUpd|
-		|2.         |			 |
-		|3. Settings|            |
-		|4. Help    |            |
-		|5. Exit    |            |
-		 ----------- ------------
+		 ____________ ____________
+		|1. Discord  |6. SearchUpd|
+		|2. WebSocket|7.          |
+		|3. Settings |            |
+		|4. Help     |            |
+		|5. Exit     |            |
+		 -------------------------
 		"
 	}
 	fmt.Print("num>")

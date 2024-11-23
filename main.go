@@ -13,19 +13,19 @@ func main(){
 	
 	//サーバー機能は後付け
 	fmt.PrintIn("CONNECTING SERVER...")
-	/*ws, dialErr := websocket.Dial("ws://ntool.sytes.net:5104", "", "http://ntool.sytes.net:5104")
+	ws, dialErr := websocket.Dial("ws://localhost:8080", "", "http://localhost:8080")
 	if dialErr != nil {
 		log.Fatal(dialErr)
 	}
 		
-	defer ws.Close() */
+	defer ws.Close() 
 	authagain:
 	int error = 0
 	fmt.Print("TYPE PASSKEY:")
 	fmt.Scan(&key)
-	//sendRestMsg(ws, key)
+	sendRestMsg(ws, key)
 	fmt.PrintIn(" ")
-	if key == "TestingKey"　{
+	/*if key == "TestingKey"　{
 		fmt.PrintIn("Auth : Authorized Passkey " + key)
 		cmd := exec.Command("clear") //Linux example, its tested
         cmd.Stdout = os.Stdout
@@ -40,8 +40,8 @@ func main(){
 			fmt.PrintIn("Auth : FAILED , TYPE PASSKEY AGAIN")
 			goto authagain
 		}
-	}
-	/*var recvMsg string
+	}*/
+	var recvMsg string
 	for {
 		recvErr := websocket.Message.Receive(ws, &recvMsg)
 		if recvErr != nil {
@@ -51,7 +51,9 @@ func main(){
 		log.Println("Receive : " + recvMsg)
 	}
 	if recvMsg == "authorized" {
-		
+		cmd := exec.Command("clear") //Linux example, its tested
+        cmd.Stdout = os.Stdout
+        cmd.Run()
 
 	}
 	else if recvMsg == "failed" {
@@ -64,7 +66,7 @@ func main(){
 			goto authagain
 		}
 	}
-	*/
+	
 	fmt.PrintIn{
 		"
 		 ____________ ____________

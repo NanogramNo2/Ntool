@@ -99,11 +99,10 @@ func main(){
 	} 
 	
 }
-/* 
+
 func sendRestMsg(ws *websocket.Conn, msg string) {
 	sendErr := websocket.Message.Send(ws, msg)
 	if sendErr != nil {
 		log.Fatal(sendErr)
 	}
 }
-*/

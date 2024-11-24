@@ -66,7 +66,7 @@ authagain:
 }
 func home() {
 home:
-	cmd := exec.Command("clear") //Linux example, its tested
+	cmd := exec.Command("clear") 
 	cmd.Stdout = os.Stdout
 	cmd.Run()
 	fmt.Println(" ____________ ____________")
@@ -82,7 +82,7 @@ home:
 	fmt.Scan(&selNum)
 	switch selNum {
 	case "1":
-		cmd := exec.Command("clear") //Linux example, its tested
+		cmd := exec.Command("clear") 
 		cmd.Stdout = os.Stdout
 		cmd.Run()
 		fmt.Println(" _______________ ____________")
@@ -93,7 +93,7 @@ home:
 		fmt.Println("|5. Return home |            |")
 		fmt.Println(" ----------------------------")
 	case "2":
-		cmd := exec.Command("clear") //Linux example, its tested
+		cmd := exec.Command("clear") 
 		cmd.Stdout = os.Stdout
 		cmd.Run()
 		var dialurl string

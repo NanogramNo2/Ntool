@@ -134,7 +134,17 @@ home:
 	case "4":
 
 	case "5":
-
+		exitingFlag:
+		fmt.Print("Do you really want to Exit?(y/n) > ")
+		var exitFlag string
+		fmt.Scan(&exitFlag)
+		if(exitFlag == "y"){
+			os.Exit(0)
+		}else if (exitFlag == "n"){
+			goto home
+		}else {
+			goto exitingFlag
+		}
 	case "6":
 
 	default:
